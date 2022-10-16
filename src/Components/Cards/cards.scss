@@ -1,0 +1,49 @@
+@import '../../global.scss';
+@import '../../mixins.scss';
+
+
+$one: #FF0000;
+$two: #FED482;
+
+$list: $one, $two; 
+.char_card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .char_img{
+        width: 40%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include gradient(to left, $list);
+        .img_container{
+            width: 75%;
+            height: 60%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+       
+    }
+    .char_desc{
+        width: 60%;
+        height: 100%;
+        .desc_container{
+            padding: 15px;
+            p{
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 27px;
+                margin:0;
+                padding:0;
+            }
+        }
+    }
+}
