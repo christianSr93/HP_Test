@@ -18,7 +18,7 @@ $list: $one, $two;
         justify-content: center;
         @include gradient(to left, $list);
         .img_container{
-            width: 75%;
+            width: 80%;
             height: 60%;
             position: relative;
             overflow: hidden;
@@ -38,11 +38,17 @@ $list: $one, $two;
             p{
                 font-family: 'Open Sans';
                 font-style: normal;
-                font-weight: 700;
+                font-weight: 400;
                 font-size: 14px;
                 line-height: 27px;
                 margin:0;
                 padding:0;
+            }
+            h2{
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 600;
+                color: #081F32;
             }
             .card_header{
                 font-family: 'Open Sans';
