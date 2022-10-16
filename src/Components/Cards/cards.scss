@@ -44,6 +44,15 @@ $list: $one, $two;
                 margin:0;
                 padding:0;
             }
+            .card_header{
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 19px;
+                color: #999999;
+                text-align: left;
+            }
         }
     }
 }
