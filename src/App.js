@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import ListCards from './Components/ListCards/listCards';
 
 function App() {
   return (
     <div className="App">
-      
+      <ListCards/>
     </div>
   );
 }
