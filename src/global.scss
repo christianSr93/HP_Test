@@ -2,8 +2,12 @@
 .p-0{ padding: 0px !important; }
 //display
 .d-flex{ display: flex; }
-
+.align-center{ align-items: center; }
+.justify-between{ justify-content: space-between; }
 //widths breakboints
 .w-100{ width: 100%; }
 .w-50{ width: 50%; }
 .w-25{ width: 25%; }
+
+//utils
+.b-radius-16{ border-radius: 16px!important; }
