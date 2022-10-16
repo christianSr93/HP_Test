@@ -7,13 +7,13 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import IconButton from '@mui/material/IconButton';
 
 const Cards = props => {
-  const { name, dateOfBirth, gender, eyeColour, hairColour, image, alive, hogwartsStudent, hogwartsStaff } = props.data;
+  const { name, dateOfBirth, gender, eyeColour, hairColour, image, alive, hogwartsStudent, hogwartsStaff, house } = props.data;
   return ( 
     <Grid className='char_card' item xs={6}>
       <Card className='d-flex w-100 b-radius-16' sx={{ maxWidth: 425 }}>
         <CardContent className='w-100 d-flex p-0'>
-        <div className='char_img'>
-            <div className='img_container'>
+        <div className={`char_img ${house}`}>
+            <div className={`img_container`}>
               <img src={image} alt="char" />
             </div>
           </div>

@@ -2,10 +2,11 @@
 @import '../../mixins.scss';
 
 
-$one: #FF0000;
-$two: #FED482;
+$gryffindor: #FF0000, #FED482; 
+$slytherin: #1C792B, #82E95E; 
+$hufflepuff: #FFC700, #FFF388; 
+$ravenclaw: #0597B7, #66D1FF; 
 
-$list: $one, $two; 
 .char_card{
     display: flex;
     justify-content: center;
@@ -16,7 +17,6 @@ $list: $one, $two;
         display: flex;
         align-items: center;
         justify-content: center;
-        @include gradient(to left, $list);
         .img_container{
             width: 80%;
             height: 60%;
@@ -30,6 +30,10 @@ $list: $one, $two;
         }
        
     }
+    .Gryffindor{ @include gradient(to left, $gryffindor); }
+    .Slytherin{ @include gradient(to left, $slytherin); }
+    .Hufflepuff{ @include gradient(to left, $hufflepuff); }
+    .Ravenclaw{ @include gradient(to left, $ravenclaw); }
     .char_desc{
         width: 60%;
         height: 100%;
