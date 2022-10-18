@@ -1,8 +1,11 @@
+@import './mixins.scss';
+
 //paddings
 .p-0{ padding: 0px !important; }
 .p-1{ padding: 10px !important; }
 //display
 .d-flex{ display: flex; }
+.direction-column{ flex-direction: column; }
 .align-center{ align-items: center; }
 .justify-between{ justify-content: space-between; }
 .justify-center{ justify-content: center; }
