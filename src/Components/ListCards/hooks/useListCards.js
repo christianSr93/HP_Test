@@ -1,37 +1,30 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import {getCharacters} from '../../../API/getCharacters';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { setCharacters, setFilterCharacters } from '../../../AppState/characterSlice';
 
 const useFilter = () => {
-    const [characters, setCharacters] = useState([]);
-    const [filterCharacters, setFilterCharacters] = useState([]);
     const active = useSelector((state) => state.filter)
-  
+    const chars = useSelector((state) => state.characters)
+    const dispatch = useDispatch();
+    
     useEffect(() => {
       let mounted = true;
       if(mounted){
         getCharacters()
         .then(data => {
-          setCharacters(data)
-          setFilterCharacters(data)
+          dispatch(setCharacters(data));
         })
       }
       return () => mounted = false;
     }, []);
   
     useEffect(() => {
-        const results = characters.filter(obj => {
-            if(active.students){
-                return obj.hogwartsStudent;
-            }else if(active.staff){
-                return obj.hogwartsStaff;
-            }
-        });
-        setFilterCharacters(results);
+        dispatch(setFilterCharacters(active));
     }, [active]);
 
     return {
-        filterCharacters
+        chars
     }
 };
 
