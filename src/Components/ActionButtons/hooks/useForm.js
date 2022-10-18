@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import {addCharacter} from '../../../API/addCharacter';
 import {getCharacters} from '../../../API/getCharacters';
+import {saveFile} from '../../../API/saveFile';
 import { useSelector, useDispatch } from 'react-redux'
 import { setCharacters, setFilterCharacters } from '../../../AppState/characterSlice';
 const useForm = (props) => {
@@ -10,6 +11,7 @@ const useForm = (props) => {
     const [hairColor, setHairColor] = useState('');
     const [gender, setGender] = useState('mujer');
     const [position, setPosition] = useState('estudiante');
+    const [selectedFile, setSelectedFile] = useState();
     const active = useSelector((state) => state.filter)
 
     const dispatch = useDispatch();
@@ -38,17 +40,23 @@ const useForm = (props) => {
         setPosition(event.target.value);
     }
 
+    const handlerFile = (event) => {
+		setSelectedFile(event.target.files[0]);
+	};
+
     const handleSubmit = async(e) =>{
         e.preventDefault();
+        const save = await saveFile(selectedFile);
+        console.log("🚀 ~ file: useForm.js ~ line 50 ~ handleSubmit ~ save", save)
         const data = {name, dateOfBirth: birthday, eyeColour:eyeColor, hairColour: hairColor, gender, hogwartsStudent: position === 'estudiante' ? true:false, hogwartsStaff:position === 'staff' ? true:false}
         const res = await addCharacter(data);
         res.status == 200 || res.status == 201 ? alert('Se agrego correctamente.'):alert('Algo salio mal.')    
-        handleClose()
         getCharacters()
         .then(data => {
-          dispatch(setCharacters(data));
-          dispatch(setFilterCharacters(active));
+            dispatch(setCharacters(data));
+            dispatch(setFilterCharacters(active));
         })
+        handleClose()
     }
 
     return {
@@ -56,6 +64,7 @@ const useForm = (props) => {
         handleBirthday, 
         handleEyeColor, 
         handleHairColor,
+        handlerFile,
         handleSubmit,
         name,
         birthday,

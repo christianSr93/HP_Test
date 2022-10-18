@@ -16,7 +16,7 @@ import useMobile from '../../hooks/useMobile';
 const AddModal = props => {
     const { isOpen, handleClose } = props;
     const { name, birthday, eyeColor, hairColor,gender, position,
-        handleGender, handlePosition, handleName, handleBirthday, handleEyeColor, handleHairColor, handleSubmit } = useForm({handleClose});
+        handleGender, handlePosition, handleName, handleBirthday, handleEyeColor, handleHairColor, handleSubmit, handlerFile } = useForm({handleClose});
     const isMobile = useMobile();
     const style = {
         position: 'absolute',
@@ -108,7 +108,7 @@ const AddModal = props => {
                     <div className='mb-1'>
                         FOTOGRAFIA
                         <IconButton color="primary" aria-label="upload picture" component="label">
-                            <input hidden accept="image/*" type="file" />
+                            <input hidden accept="image/*" type="file" onChange={handlerFile}/>
                             <PhotoCamera />
                         </IconButton>
                     </div>
