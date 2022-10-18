@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { addToFavorites } from '../../../AppState/characterSlice';
 
@@ -17,11 +16,7 @@ const useCards = (props) => {
     const handleIsFavorite = ()=>{
         let result;
         if(favoriteChars.length>0){
-            result = favoriteChars.find(( element ) => {
-                if(element.name === props.data.name){
-                    return true
-                }
-            });
+            result = favoriteChars.find(( element ) => element.name === props.data.name);
         }else{
             result = false;
         }

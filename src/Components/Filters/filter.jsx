@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import './filters.scss';
 import useFilter from './hooks/useFilter';
 import hp_logo from './hp_logo.png';
