@@ -1,12 +1,12 @@
 export async function saveFile(selectedFile) {
     const formData = new FormData();
-    formData.append('File', selectedFile);
+    formData.append('image', selectedFile);
     const url = `https://api.imgbb.com/1/upload?key=64b77e3d2a70760a2d759c376a806ecc`;
     return fetch(
 			url,
 			{
 				method: 'POST',
-				image: formData,
+				body: formData,
 			}
 		)
 			.then((response) => response.json())
