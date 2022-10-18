@@ -9,7 +9,7 @@ const useCards = (props) => {
         if(favoriteChars.length<=4){
             dispatch(addToFavorites(props))
         }else{
-            alert('ya no caben')
+            alert('El limite de favoritos es de 5.')
         }
     }
 
