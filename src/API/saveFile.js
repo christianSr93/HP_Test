@@ -6,7 +6,7 @@ export async function saveFile(selectedFile) {
 			url,
 			{
 				method: 'POST',
-				body: formData,
+				image: formData,
 			}
 		)
 			.then((response) => response.json())
