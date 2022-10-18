@@ -5,9 +5,14 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import IconButton from '@mui/material/IconButton';
+import useCards from './hooks/useCards';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 
 const Cards = props => {
   const { name, dateOfBirth, gender, eyeColour, hairColour, image, alive, hogwartsStudent, hogwartsStaff, house } = props.data;
+  const data =  props.data;
+  const { handleFavorite, handleIsFavorite } = useCards( { data });
+  const isFavorite = handleIsFavorite();
   return ( 
     <Grid className='char_card' item xs={6}>
       <Card className='d-flex w-100 b-radius-16' sx={{ maxWidth: 425 }}>
@@ -24,8 +29,10 @@ const Cards = props => {
                   {alive ? 'VIVO':'FINADO'} / {hogwartsStudent ? 'ESTUDIANTE':(hogwartsStaff ? 'STAFF':'EXTERNO') }
                  
                 </p>
-                <IconButton aria-label="delete">
-                  <BookmarkBorderIcon></BookmarkBorderIcon>
+                <IconButton onClick={handleFavorite} aria-label="delete" disabled={isFavorite}>
+                  {
+                    isFavorite ? <BookmarkIcon></BookmarkIcon>:<BookmarkBorderIcon></BookmarkBorderIcon>
+                  } 
                 </IconButton>
               </div>
               <div className='card_content'>
