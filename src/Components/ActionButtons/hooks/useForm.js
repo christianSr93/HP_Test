@@ -47,7 +47,6 @@ const useForm = (props) => {
     const handleSubmit = async(e) =>{
         e.preventDefault();
         const save = await saveFile(selectedFile);
-        console.log("🚀 ~ file: useForm.js ~ line 50 ~ handleSubmit ~ save", save)
         const data = {name, dateOfBirth: birthday, eyeColour:eyeColor, hairColour: hairColor, gender, hogwartsStudent: position === 'estudiante' ? true:false, hogwartsStaff:position === 'staff' ? true:false , image: save.data.url}
         const res = await addCharacter(data);
         res.status === 200 || res.status === 201 ? alert('Se agrego correctamente.'):alert('Oops, Algo salio mal.')    
