@@ -4,11 +4,11 @@ import Cards from '../Cards/cards'
 import Grid from '@mui/material/Grid';
 import useListCards from './hooks/useListCards';
 const ListCards = props => {
- const {filterCharacters} = useListCards();
+ const { chars } = useListCards();
 
   return (
-    <Grid container spacing={2}>
-      {filterCharacters.map(e=>(
+    <Grid className='p-1' container spacing={2}>
+      {chars.filterCharacters.map(e=>(
         <Cards data={e}></Cards>
       ))}
     </Grid>
