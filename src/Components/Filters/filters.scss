@@ -1,0 +1,70 @@
+@import '../../global.scss';
+
+
+.filter_container{
+    padding: 10px;
+    margin: 239px 0px 94px 0px;
+
+    @include sm {
+        margin: 79px 0px 40px 0px;
+    }
+    .btn-container{
+        width: 100%;
+        height: 60px;
+        .btn{
+            width: 40%;
+            height: 100%;
+            .filter-title{
+                text-align: center;
+                color: white;
+            }
+            
+            .button-filter{
+                width: 100%;
+                height: 100%;
+                border-radius: 4px;
+                border:3px solid #9678cf;
+                color: white;
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 17px;
+                line-height: 25px;
+                text-align: center;
+                letter-spacing: 0.2em;
+               
+                &__active{
+                    background: #6B63B5;
+                }
+                &__inactive{
+                    background: rgba(0, 0, 0, 0.6);
+                    &:hover {
+                        background: rgba(107, 99, 181, 0.6);
+                        cursor: pointer;
+                      }
+                }
+                @include sm {
+                    letter-spacing: 0;
+                }
+            }
+        }
+    }
+    .logo-container{
+        display: flex;
+        flex-direction: column;
+        height: 130px;
+        margin-bottom: 64px;
+        align-items: center;
+        h2{
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 25px;
+            color: white;
+        }
+        img{
+            width: 200px;
+        }
+    }
+}

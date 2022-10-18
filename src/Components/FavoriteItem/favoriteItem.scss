@@ -1,0 +1,45 @@
+@import '../../global.scss';
+
+
+.item-container{
+   height: 43px;
+   width: 276px;
+   border-bottom: none;
+   background: linear-gradient(black,black) bottom /* left or right or else */ no-repeat;
+   background-size: 77% 1px;
+   padding-bottom: 5px;
+   padding-top: 4px;
+
+    .char_img{
+        width: 30%;
+        height: 100%;
+        .image-container{
+            width: 42px;
+            height: 42px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    .desc-container{
+        height: 100%;
+        width: 70%;
+        color: white;
+        .text-container{
+            width: 80%;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+        }
+        .icon-container{
+            width: 20%;
+        }
+    }
+    
+}
