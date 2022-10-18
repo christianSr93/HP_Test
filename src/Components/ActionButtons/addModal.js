@@ -11,17 +11,19 @@ import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import './addModal.scss'
 import useForm from './hooks/useForm';
+import useMobile from '../../hooks/useMobile';
 
 const AddModal = props => {
     const { isOpen, handleClose } = props;
     const { name, birthday, eyeColor, hairColor,gender, position,
         handleGender, handlePosition, handleName, handleBirthday, handleEyeColor, handleHairColor, handleSubmit } = useForm({handleClose});
+    const isMobile = useMobile();
     const style = {
         position: 'absolute',
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: 400,
+        width: isMobile ? 250:400,
         bgcolor: 'background.paper',
         boxShadow: 24,
         p: 4,
