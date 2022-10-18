@@ -1,0 +1,23 @@
+@import '../../global.scss';
+
+.submit-btn{
+    width: 288px;
+    height: 67px;
+    border-radius: 4px;
+    border:3px solid #9678cf;
+    color: white;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 25px;
+    /* or 147% */
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    letter-spacing: 0.2em;
+   
+    &:hover {
+        background: rgba(107, 99, 181, 0.6);
+        cursor: pointer;
+      }
+}
