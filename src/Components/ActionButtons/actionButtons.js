@@ -18,7 +18,7 @@ const ActionButtons = props => {
             <button onClick={handleAdd} className='action-btns action-btns-right d-flex justify-center align-center'>Agregar&nbsp; <PersonAddAlt1Icon></PersonAddAlt1Icon></button>
         </div>
         <div className={`favorites-container ${isFavOpen ? 'favorites-container-active':'favorites-container-inactive'}`}>
-            <div className='mt-50'>
+            <div className='item'>
                 {
                     favoriteChars.map(e=>(
                         <FavoriteItem data={e}></FavoriteItem>
