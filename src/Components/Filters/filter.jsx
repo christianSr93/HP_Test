@@ -2,19 +2,22 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './filters.scss';
 import useFilter from './hooks/useFilter';
-
+import hp_logo from './hp_logo.png';
 const Filter = props => {
 
     const {handleClickStudents, handleClickStaff, active} = useFilter();
 
   return (
     <div className='filter_container'>
-        <h2 className='filter-title d-flex justify-center align-center'>Selecciona tu filtro</h2>
-        <div className='d-flex justify-evenly align-center'>
-            <div>
+        <div className='logo-container'>
+            <img src={hp_logo} alt="char" />
+            <h2 className='filter-title d-flex justify-center align-center'>Selecciona tu filtro</h2>
+        </div>
+        <div className='d-flex justify-evenly align-center btn-container'>
+            <div className='btn'>
                 <button onClick={handleClickStudents} className={`button-filter button-filter__${active.students ? 'active':'inactive'}`}>Estudiantes</button>
             </div>
-            <div>
+            <div className='btn'>
                 <button onClick={handleClickStaff} className={`button-filter button-filter__${active.staff ? 'active':'inactive'}`}>Staff</button>
             </div>
         </div>
