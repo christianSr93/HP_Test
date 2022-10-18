@@ -17,11 +17,11 @@ const useFilter = () => {
         })
       }
       return () => mounted = false;
-    }, []);
+    }, [dispatch]);
   
     useEffect(() => {
         dispatch(setFilterCharacters(active));
-    }, [active]);
+    }, [active, dispatch]);
 
     return {
         chars
