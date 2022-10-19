@@ -12,11 +12,11 @@ https://nodejs.org/en/download/
 node -v
 npm -v
 ```
-- Instalar las dependencias del proyecto
+- Navegar hacia la carpeta /HP_test e instalar las dependencias del proyecto con el siguiente comando
 ```bash
-npm -install
+npm install
 ```
-- Ejecutar el siguiente comando para iniciar la aplicacion
+- Ejecutar el siguiente comando para iniciar la aplicacion con el siguiente comando
 ```bash
 npm start
 ```
